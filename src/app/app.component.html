@@ -1,0 +1,13 @@
+<header>Custom text area</header>
+<form [formGroup]="appForm">
+    <input type="text" formControlName="name">
+
+    <app-custom-text-area
+        [noMoreThanThree]="true"
+        formControlName="desc">
+    </app-custom-text-area>
+
+    <button type="button" (click)="onSubmit()">Send</button>
+</form>
+
+<pre>{{ desc.errors | json }}</pre>
